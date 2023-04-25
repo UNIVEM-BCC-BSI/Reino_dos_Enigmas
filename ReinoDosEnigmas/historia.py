@@ -31,7 +31,7 @@ while True:
             Otavio Sbms
             Juan Yang
             Guilherme Silva
-            Yudi""")
+            Yukio Mawatari""")
 
         textoAnimado('\nDigite qualquer numero para voltar: ', 0.08)
         int(input())
