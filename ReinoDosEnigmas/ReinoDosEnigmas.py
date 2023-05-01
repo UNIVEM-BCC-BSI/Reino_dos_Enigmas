@@ -9,7 +9,7 @@ RESET = "\033[0;0m"
 while True:
     print("""
             +---------------------+  
-            | O Reino dos Enigmas |
+            |  Reino dos Enigmas  |
             +---------------------+ 
 
             1 - Iniciar jogo
