@@ -1,10 +1,6 @@
 from funcoes import *
 from Player import *
 
-RED   = "\033[1;31m"
-RESET = "\033[0;0m"
-BLUE  = "\033[1;34m"
-GREEN = "\033[0;32m"
 
 player = str(input('\nNome: '))
 playerClass = Player(player)

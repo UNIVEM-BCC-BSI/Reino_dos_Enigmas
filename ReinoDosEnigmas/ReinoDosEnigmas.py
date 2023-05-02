@@ -2,12 +2,12 @@ from funcoes import *
 
 
 while True:
-    print("""
-            +---------------------+  
-            |  Reino dos Enigmas  |
-            +---------------------+ 
+    print(f"""
+            {CYAN+'+---------------------+'+RESET}  
+            {CYAN+'|  Reino dos Enigmas  |'+RESET}
+            {CYAN+'+---------------------+'+RESET} 
 
-            1 - Iniciar jogo
+            {GREEN+'1 - Iniciar jogo'+RESET}
             2 - Sobre
             3 - Créditos
             4 - Sair
