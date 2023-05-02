@@ -1,10 +1,5 @@
 from funcoes import *
-from historia import *
-from Player import Player
-import time,sys
 
-RED   = "\033[1;31m"
-RESET = "\033[0;0m"
 
 while True:
     print("""
@@ -20,6 +15,9 @@ while True:
     textoAnimado('Escolha: ',0.08)
     escolhaInicio = (input())
     if escolhaInicio == '1':
+        textoAnimado('\nHavia um pirata solitário chamado', 0.02)
+        textoAnimado('... ', 0.5)
+        from historia import *
         historia()
         break
     elif escolhaInicio == '2':

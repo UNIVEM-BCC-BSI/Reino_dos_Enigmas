@@ -1,3 +1,4 @@
+
 class Player():
     def __init__(self, name):
         self.name = name
@@ -13,3 +14,4 @@ class Player():
         self.pontos += 1
     def daDinheiro(self, dinheiro):
         self.dinheiro += dinheiro
+
