@@ -29,7 +29,7 @@ while True:
     elif escolhaInicio == '3':
         print("""
             Henry Lacava
-            Otavio SBMS
+            Otávio SBMS
             Juan Yang
             Guilherme Silva
             Yukio Mawatari""")
