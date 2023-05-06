@@ -25,13 +25,13 @@ class Questao:
 
             {self.enunciado}
 
-{YELLOW+f'sobre {CYAN+self.materia+YELLOW} de assunto {CYAN+self.assunto+YELLOW} está correta!'+RESET}\n""")
+{YELLOW+f'sobre {CYAN+self.materia+YELLOW} do assunto {CYAN+self.assunto+YELLOW} está correta!'+RESET}\n""")
         else:
             print(f"""{YELLOW+'- A resposta que foi dada para a pergunta:'+RESET}
 
             {self.enunciado}
 
-{YELLOW+f'sobre {CYAN+self.materia+YELLOW} de assunto {CYAN+self.assunto+YELLOW} está errada!'+RESET}
+{YELLOW+f'sobre {CYAN+self.materia+YELLOW} do assunto {CYAN+self.assunto+YELLOW} está errada!'+RESET}
 {YELLOW+f'Resposta correta: {CYAN+self.resposta+YELLOW}'+RESET}\n""")
 
 # MODO DE UTILIZAÇÃO:

@@ -20,6 +20,3 @@ class Player:
     def exibeInventario(self):
         print(YELLOW+f'\nA mochila de {self.name} atualmente possui:'+RESET)
         print(CYAN+f"{self.inventario}"+RESET)
-
-jogador = Player('Carlos', 'pedra',2)
-
