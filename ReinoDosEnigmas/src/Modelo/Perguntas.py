@@ -1,10 +1,10 @@
 from src.Config.funcoes import *
 
-class Questao:
-    def __init__(self, enunciado, resposta, opcao, materia, assunto):
+class Pergunta:
+    def __init__(self, enunciado, resposta, alternativa, materia, assunto):
         self.enunciado = enunciado
         self.resposta = resposta
-        self.opcao = opcao
+        self.alternativa = alternativa
         self.materia = materia
         self.assunto = assunto
 
@@ -13,7 +13,7 @@ class Questao:
 
 
     def verificarResposta(self, resposta):
-        if resposta == self.opcao:
+        if resposta == self.alternativa:
             self.status = True
         else:
             self.status = False
@@ -38,9 +38,9 @@ class Questao:
 
 #     *CRIAÇÃO DAS PERGUNTAS
 
-#     questao1 = Questao("Qual é a capital do Brasil?\n1- Brasilia\n2- Paris\n3- tocantins", 'Brasilia',"1", "Geografia", "Capitais")
-#     questao2 = Questao("Qual é a fórmula da água?\n1- skj\n2- h20\n3- url", 'h20',"2", "Química", "Compostos")
-#     questao3 = Questao("Quem é o autor de Dom Casmurro?\n1- Otávio\n2- pedro\n3- Machado de Assis", 'Machado de Assis',"3", "Literatura", "Autores")
+#     questao1 = Pergunta("Qual é a capital do Brasil?\n1- Brasilia\n2- Paris\n3- tocantins", 'Brasilia',"1", "Geografia", "Capitais")
+#     questao2 = Pergunta("Qual é a fórmula da água?\n1- skj\n2- h20\n3- url", 'h20',"2", "Química", "Compostos")
+#     questao3 = Pergunta("Quem é o autor de Dom Casmurro?\n1- Otávio\n2- pedro\n3- Machado de Assis", 'Machado de Assis',"3", "Literatura", "Autores")
 
 #     *PERGUNTAS INSERIDAS NA HISTORIA
 
