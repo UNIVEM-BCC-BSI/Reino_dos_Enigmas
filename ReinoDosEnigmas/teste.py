@@ -5,7 +5,7 @@ from src.Config.funcoes import *
 nome = input('nome: ')
 jogador = Player(nome,'moedas',5)
 
-PerguntaRio = Questao('Com quantos Paus se faz uma canoa?\n1- um\n2- dois\n3- tres\n','tres paus','3','marcenaria','como fazer uma canoa')
+PerguntaRio = Pergunta('Com quantos Paus se faz uma canoa?\n1- um\n2- dois\n3- tres\n','tres paus','3','marcenaria','como fazer uma canoa')
 
 PerguntaRio.exibirEnunciado()
 resposta = input('Resposta: ')
