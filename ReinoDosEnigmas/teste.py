@@ -16,10 +16,6 @@ print('Relatorio')
 PerguntaRio.relatorio()
 
 
-
-
-
-
 if PerguntaRio.status == True:
     print(f'\notimo {jogador.name}, a resposta esta correta, aqui está o seu premio\n')
     jogador.adicionaItem('moedas',50)

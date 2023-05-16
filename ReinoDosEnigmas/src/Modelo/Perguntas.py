@@ -9,7 +9,7 @@ class Pergunta:
         self.assunto = assunto
 
     def exibirEnunciado(self):
-        print(f'\n{self.enunciado}')
+        textoAnimado(f'\n{self.enunciado}',0.01)
 
 
     def verificarResposta(self, resposta):
@@ -21,18 +21,18 @@ class Pergunta:
 
     def relatorio(self):
         if self.status == True:
-            print(f"""{YELLOW+'- A resposta que foi dada para a pergunta:'+RESET}
+            textoAnimado(f"""{YELLOW+'- A resposta que foi dada para a pergunta:'+RESET}
 
             {self.enunciado}
 
-{YELLOW+f'sobre {CYAN+self.materia+YELLOW} do assunto {CYAN+self.assunto+YELLOW} está correta!'+RESET}\n""")
+{YELLOW+f'sobre {CYAN+self.materia+YELLOW} do assunto {CYAN+self.assunto+YELLOW} está correta!'+RESET}\n""",0.01)
         else:
-            print(f"""{YELLOW+'- A resposta que foi dada para a pergunta:'+RESET}
+            textoAnimado(f"""{YELLOW+'- A resposta que foi dada para a pergunta:'+RESET}
 
             {self.enunciado}
 
 {YELLOW+f'sobre {CYAN+self.materia+YELLOW} do assunto {CYAN+self.assunto+YELLOW} está errada!'+RESET}
-{YELLOW+f'Resposta correta: {CYAN+self.resposta+YELLOW}'+RESET}\n""")
+{YELLOW+f'Resposta correta: {CYAN+self.resposta+YELLOW}'+RESET}\n""",0.01)
 
 # MODO DE UTILIZAÇÃO:
 
