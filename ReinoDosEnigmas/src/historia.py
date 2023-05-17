@@ -2,7 +2,7 @@ from src.Config.funcoes import *
 from src.Modelo.Player import *
 
 player = str(input('\nNome: '))
-jogador = Player(player,'Moeda de ouro',5)
+jogador = Player(player,'Moedas de ouro',5)
 
 from src.Modelo.questoes import *
 
