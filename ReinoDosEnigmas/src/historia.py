@@ -39,8 +39,17 @@ def cidade():
     input('Digite para continuar: ')
     fazenda()
 
-def fazenda():
-    textoAnimado("\naalhsdilashdashldhliasdyhilsadliash",0.01)
+def Fazenda():
+    textoAnimado(f"\nAo chegar na fazenda durante o anoitecer, o fazendeiro apresenta a {jogador.name} onde será a sua estadia, e o dia se encerra com o mesmo dormindo cansado ao lado dos animais do celeiro.\nNo outro dia, {jogador.name} é acordado cedo pelos galos e ao sair do celeiro já encontra o fazendeiro trabalhando em sua fazenda.\nAo agradecer pela estadia, no intuito de continuar a sua jornada, {jogador.name} é surpreendido pelo fazendeiro dizendo que o preço por sua hospedagem seria pago por auxílios e trabalhos na fazenda.\n\n após aquela exaustiva manhã de trabalho duro, o {jogador.name} finalmente é liberado da fazenda e conseguiu continuar o seu caminho.",0.01)
+
+def Rio():
+    textoAnimado(f"\n\nSaindo da fazenda e seguindo uma estrada por algumas horas, o {jogador.name} encontra um grandioso rio continuando com muito cuidado pela margem do rio, em pouco tempo o {jogador.name} conseguiu encontrar pequenos canais de irrigação que saiam do rio, logo poderia existir uma civilização pelas redondezas.\nSeguindo mais a fundo, ao longo do canal, um padrão improvável acaba também chamando a atenção do {jogador.name}.\nUm pequeno desvio nos canais feitos de pedra levava a uma tubulação improvisada feita de bamboo em direção ao campo.",0.01)
+
+def CidadePequena():
+    textoAnimado(f"\n\nSeguindo os grandes canais de irrigação, no horizonte o {jogador.name} já consegue enxergar uma nova cidade em seu caminho.\nEsta nova cidade ao contrário da primeira cidade visitada pelo {jogador.name}. era pequena e com poucos habitantes.\nNo centro dela também havia um pequeno centro comercial, onde chamou a atenção do {jogador.name} a grande quantidade de frutos do mar e peixes que eram vendidos.\nPensando nisso, o {jogador.name} pergunta o motivo a um habitante local e acaba descobrindo que ele estaria a poucas horas do litoral e de uma das maiores cidades do reino.\n\n opções: ir até o vendedor ou continuar o caminho.após observar tudo o que pretendia, o {jogador.name} continua a sua jornada agora mais confiante de ter o seu objetivo concluído.", 0.01)
+
+def CasaIsolada():
+    textoAnimado(f"Seguindo a tubulação improvisada o {jogador.name} anda por alguns minutos até encontrar uma pequena cabana feita de madeira isolada em meio a um campo.\nBatendo na porta da cabana um velho sai de dentro dela.\nApós conversar com o velho, o {jogador.name} acaba ganhando a confiança do morador isolado, e em determinado momento uma proposta é feita.\n\nOpções: confiar ou não confiar.")
 
 def Praia():
     textoAnimado(f'\n\nSeguindo pela areia da praia é possível enxergar os destroços do que um dia foi o seu barco, indo mais à frente {jogador.name} se depara com uma vegetação mais densa e uma aparente trilha para a floresta que entes foi ignorada, ao mesmo tempo é possível ver ao horizonte altos muros de uma grande cidade.',0.01)
