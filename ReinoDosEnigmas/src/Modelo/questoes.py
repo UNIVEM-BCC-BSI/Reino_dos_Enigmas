@@ -20,12 +20,12 @@ perguntaBarco = Pergunta('Um barco percorre uma distância de 75 quilômetros em
 # ROUBO:
 
 # 8
-perguntaRoubo1 = Pergunta('a','a','a','a','a')
+perguntaRoubo1 = Pergunta('Qual é a principal consequência do aquecimento global?\n\n1- Elevação do nível do mar\n\n2- Diminuição da poluição atmosférica\n\n3- Aumento da biodiversidade','Elevação do nível do mar','1','Geografia','Mudanças climáticas')
 # 9
-perguntaRoubo2 = Pergunta('a','a','a','a','a')
+perguntaRoubo2 = Pergunta('O que são cadeias montanhosas?\n\n1- Planícies extensas e planas\n\n2- Grandes extensões de água doce\n\n3- Sistemas de montanhas conectadas entre si','Sistemas de montanhas conectadas entre si','3','Geografia','Geomorfologia')
 # 10
-perguntaRoubo3 = Pergunta('a','a','a','a','a')
+perguntaRoubo3 = Pergunta('O que são as linhas imaginárias utilizadas para localizar pontos na superfície terrestre?\n\n1- Meridianos\n\n2- Paralelos\n\n3- Círculos polares','Paralelos','2','Geografia','Cartografia')
 # 11
-perguntaRoubo4 = Pergunta('a','a','a','a','a')
+perguntaRoubo4 = Pergunta('Um retângulo tem comprimento igual ao triplo de sua largura. Se a área desse retângulo é 72 cm², determine suas dimensões.\n\n1- Largura = 4 cm, Comprimento = 12 cm\n\n2- Largura = 6 cm, Comprimento = 18 cm\n\n3- Largura = 8 cm, Comprimento = 24 cm','Largura = 6 cm, Comprimento = 18 cm','2','Matemática','Geometria')
 # 12
-perguntaRoubo5 = Pergunta('a','a','a','a','a')
+perguntaRoubo5 = Pergunta('Em uma turma de 30 alunos, 18 gostam de Matemática e 12 gostam de Ciências. Se 6 alunos gostam de ambos, quantos alunos não gostam nem de Matemática nem de Ciências?\n\n1- 6 alunos\n\n2- 12 alunos\n\n3- 24 alunos','24 alunos','3','Matemática','Teoria dos conjuntos')
