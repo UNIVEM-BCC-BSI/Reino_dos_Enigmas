@@ -6,6 +6,22 @@ jogador = Player(player,'Moedas de ouro',50)
 
 from src.Modelo.questoes import *
 
+#  funcionalidade de vendas:
+
+def vendedor(inventario, item, quantidade_item, troca, quantidade_troca):
+    if item in inventario:
+        quantidade_item_atual = inventario.get(item, 0)
+        if quantidade_item_atual >= quantidade_item:
+            inventario[item] -= quantidade_item
+            inventario[troca] = inventario.get(troca, 0) + quantidade_troca
+            print(BLUE+F"\n\n{jogador.name} Trocou {quantidade_item} {item} por {quantidade_troca} {troca}."+RESET)
+        else:
+            print(RED+"\n\nQuantidade insuficiente de itens para realizar a ação.\n"+RESET)
+    else:
+        print(RED+"O item não está na mochila."+RESET)
+
+# historia:
+
 def intro():
     textoAnimado(f'\n{jogador.name} passou a maior parte de sua vida navegando pelos mares em busca de tesouros perdidos. Era um homem habilidoso, mas solitário, que preferia viajar sozinho em seu pequeno barco em vez de trabalhar em equipe com outros piratas. Ele acreditava que sua independência lhe dava uma vantagem sobre os outros piratas, pois não precisava dividir o tesouro com ninguém.\n\nCerto dia, {jogador.name} descobriu um mapa antigo que indicava a localização de um tesouro lendário, que se acreditava estar escondido em uma ilha remota. {jogador.name}, sendo um pirata experiente, navegou por dias sem fim pelos mares tempestuosos, enfrentando tempestades e lutando contra inimigos implacáveis, até que finalmente avistou a ilha deserta.\n\nMas infelizmente, as coisas não correram como {jogador.name} planejou. Enquanto navegava em direção à ilha, seu pequeno barco foi atingido por uma tempestade repentina e violenta, fazendo-o ter que mudar completamente o seu caminho, nalfraando na costa do continente. {jogador.name}, desesperado, conseguiu nadar até a praia, mas seu barco e todo o seu tesouro foram perdidos nas profundezas do mar, restando apenas consigo uma mochila com alguns itens que sobraram.',0.01)
 
@@ -283,18 +299,95 @@ def CidadeDoMar():
     Barco()
 
 def Barco():
-    print("teste")
+    textoAnimado(f"\nA cidade pulsava com vida enquanto {jogador.name} caminhava pelas vielas estreitas, apreciando as fachadas coloridas das lojas e o som do comércio ao seu redor.\n\nAo chegar à praça central, jogador seguiu uma estrada íngreme que levava à colina da baía.\n\nAlcançando o topo, seus olhos se fixaram no estaleiro à beira-mar.\n\n\nEra um local impressionante, repleto de madeira, cordas e ferramentas.\n\nBarcos em diferentes estágios de construção espalhavam-se pelo terreno, demonstrando a dedicação e habilidade do mestre construtor.\n\n{jogador.name} foi se aproximando enquanto Lars trabalhava em um casco de madeira. O artesão estava envolto em sua tarefa, imerso em seu próprio mundo de criação.\n\nTimidamente, {jogador.name} interrompeu o artesão, que ergueu os olhos para encontrar o olhar curioso do jovem à sua frente.\n\n{GREEN+jogador.name+RESET} - Desculpe a interrupção, mestre Lars... Eu sou {jogador.name}, e ouvi falar de suas incríveis habilidades como construtor de barcos.\nVim aqui porque tenho um sonho de possuir meu próprio barco. Será que você poderia me ajudar?",0.01)
+                 
+    textoAnimado(f"\n\nLars sorri e olha para {jogador.name} gentilmente...\n\n\n",0.01)
+    input('Digite para continuar: ')    
+                 
+    textoAnimado(f"\n\n{BLUE+'Lars'+RESET} - Ah, meu jovem, é sempre gratificante ver alguém interessado em embarcar nessa jornada.\nTer o sonho de possuir seu próprio barco é algo especial.\nE eu ficaria feliz em ajudá-lo a transformar esse sonho em realidade.\nMas antes de começarmos, gostaria de saber mais sobre o que você está procurando.\nDiga-me, qual é o tipo de barco que você tem em mente? Quais são suas expectativas e o que pretende fazer com ele?\n\n{GREEN+jogador.name+RESET} - bem, busco um barco pequeno, minha tripulação consiste em apenas eu, e é importante também que seja rápido.\n\n{BLUE+'Lars'+RESET} - Um barco pequeno e rápido, entendo. É uma escolha excelente para aventuras individuais. Com um projeto adequado, podemos criar algo que atenda às suas necessidades.\n\n{GREEN+jogador.name+RESET} - E aproximadamente quanto custaria para o senhor construir um barco com estas esepecificações para mim?\n\n{BLUE+'Lars'+RESET} - Bem, o preço de um barco veleiro pequeno feito de madeira e adequado para os seus propositos pode variar dependendo de diversos fatores,\nmás levando em conta todos esses aspectos e considerando a viabilidade do projeto, estimo que este barco poderia custar aproximadamente 1000 moedas de ouro.\n\n{GREEN+jogador.name+RESET} - Bem... não tenho todo este dinheiro, sou novo nesta cidade...\nna verdade estou viajando a alguns dias apenas para te encontrar e poder voltar para a minha casa no outro continente...\nO senhor poderia me dar algum desconto neste valor?, quem sabe eu poderia até trabalhar aqui na oficina por alguns dias,\nou fazer qualquer coisa que o senhor me mandar!",0.01)
+
+
+    textoAnimado(f"\n\n{BLUE+'Lars'+RESET} - hmmm bem, voce realmente parece interessado neste barco...\nEm minha oficina tem mutro trabalho a ser feito.\nSe voce der conta de realizar todas as terefas, conseguirei te dar um ótimo desconto.\n\n{BLUE+'Lars'+RESET} - Inclusive! a sua ajuda agora seria bem vinda.\nMais cedo eu fechei com o Rei mais uma encomenda de barcos para a frota real, e ele me passou uma série de especificações que devem ser atendidas.\nConseguiria resolver para mim estes calculos?\n\n",0.01)
+
+    perguntaBarco.exibirEnunciado()
+
+    while True:
+        textoAnimado('\n\nResposta: ',0.01)
+        escolha = (input())
+        if escolha == '1':
+            resposta = '1'
+            break
+        elif escolha == '2':
+            resposta = '2'
+            break
+        elif escolha == '3':
+            resposta = '3'
+            break
+        else:
+            print(RED+'\nEscolha uma opção válida.'+RESET)
+
+    perguntaBarco.verificarResposta(resposta)
+
+    if perguntaBarco.status == True:
+        textoAnimado(f"\n\n{BLUE+'Lars'+RESET} - hmm me parece promissor obrigado pela ajuda!...\n\n",0.01)
+    elif perguntaBarco.status == False:
+        textoAnimado(f"\n\n{BLUE+'Lars'+RESET} - hmm vou procurar mais um pouco sobre, caso precise de mais ajuda te avisarei!...\n\n",0.01)
+
+    textoAnimado(f"\n{jogador.name} passou alguns dias dormindo na oficina e ajudando Lars enquanto admirava o trabalho do artesão com o seu barco sendo produzido.\nApós todo o tempo de seus serviços, {jogador.name} conseguiu até aprender um pouco sobre como o seu Mestre realizava seu trabalho.\n\n",0.01)
+
+    textoAnimado(f"\n{BLUE+'Lars'+RESET} - Bem.., agora acredito que voce ja me ajudou o bastante, durante este tempo andei pensando e te observando...\nvoce realmente seria um bom navegador, e a sua ajuda foi de extrema importancia para o andamento dos meus outros projetos,\nentão indo ao que interessa, conseguirei cobrar por seu barco um valor simbolico de 500 moedas de ouro...É o minimo que conseguirei\n\n",0.01)
+
+    input(f"Digite para comprar o barco: ")
+    
+    vendedor(jogador.inventario, "Moedas de ouro", 500, "Titulo de posse de embarcação", 1)
+    jogador.exibeInventario()
+
+    textoAnimado(f"\n\n{BLUE+'Lars'+RESET} - Não se preocupe meu jovem, não estou te dando um golpe, a sua embarcação já se encontra no porto da cidade.\nCom este titulo de posse voce irá conseguir pegar ele e fazer o que bem entender.\n\n{GREEN+jogador.name+RESET} - Muito obrigado Mestre Lars, foi uma hora ter tido esta experiencia com o senhor.\n",0.01)
+
+    textoAnimado(f"\n\nSaindo da oficina, {jogador.name} vai correndo até o porto e lá estava o seu barco ancorado em uma das docas.\n\nDepois de tanto tempo sem chegar perto de um igual, {jogador.name} acredita até ter se esquecido sobre como manusear os cabos e todos os itens do convés.\n\nMás {jogador.name} nasceu para navegar, e rapidamente já conseguiu se acostumar com tudo.\n\nAntes de partir {jogador.name} olha em direção ao grande continente o qual se aventurou por tantos dias e relembra cada uma de\n\nsuas experiencias adquiridas, seja pelas belas paisagens observadas ou seja pelas pessoas com quem {jogador.name} teve a oportunidade de conhecer e até mesmo de ajudar.\n\nCom certeza no futuro {jogador.name} se aventuraria novamente por este incrivel lugar.\n\nApós isso, ele içou as velas, subiu a ancora e partiu em direção ao horizinte retornando para a sua querida e longínqua casa.....",0.01)
+
+    input('\n\n\nDigite para continuar: ')
+    Final()
+
+def Final():
+    print(f"""\n\n
+
+
+    
+
+
+
+
+
+
+                                            {YELLOW+'+---------------------+'+RESET}  
+                                            {YELLOW+'|  Reino dos Enigmas  |'+RESET}
+                                            {YELLOW+'+---------------------+'+RESET} 
+
+
+
+                                            
+
+
+
+                        
+        
+                        
+                        """)
+    {textoAnimado(BLUE+"- OBRIGADO POR TER JOGADO -"+RESET,0.05)}
+
+                        
+
+    {textoAnimado(CYAN+'\n\n\n\n- CRÉDITOS: -\n\n\n'+RESET,0.05)}
+
+    {textoAnimado("Otávio SBMS\n\nHenry Lacava\n\nJuan Yang\n\nGuilherme Silva\n\nYukio Mawatari\n\n\n\n",0.05)}
+
+    input("Digite para prosseguir: ")
+    Resultados()
 
 def Resultados():
 
-    print(f"""
-            {CYAN+'+---------------------+'+RESET}  
-            {CYAN+'|  Reino dos Enigmas  |'+RESET}
-            {CYAN+'+---------------------+'+RESET} 
-
-           {CYAN+'- RELATORIO DE QUESTÕES -'+RESET}
-
-        \n\n""")
+    textoAnimado(BLUE+"\n\n\n- RELATÓRIO DE QUESTÕES: -\n\n\n\n\n"+RESET,0.05)
 
     perguntaPraia.relatorio()
     perguntaFloresta.relatorio()
@@ -314,11 +407,9 @@ def Resultados():
 
 
 
-    print(f"""\n\n
 
-           {CYAN+'- PONTOS OBTIDOS -'+RESET}
+    textoAnimado({BLUE+'\n\n\n\n- PONTOS OBTIDOS -\n\n\n\n'+RESET},0.05)
 
-        \n\n""")
 
     textoAnimado({CYAN+"Ao longo do jogo foram obtidos:"+RESET},0.01)
     print(f"\n\n {jogador.pontosGeo} {YELLOW+'Pontos na materia Geografia'+RESET}")
@@ -326,11 +417,15 @@ def Resultados():
     print(f"\n\n\n{CYAN+f'O inventario de {jogador.name} possui os itens:'+RESET}")
     jogador.exibeInventario()
 
-    print(f"""\n\n
+    textoAnimado({CYAN+'\n\n\n- CONCLUSÃO -'+RESET},0.05)
 
-           {CYAN+'- CONCLUSÃO -'+RESET}
+    if jogador.pontosGeo < jogador.pontosMat:
+        textoAnimado({YELLOW+'\n\nRecomendado maior enfase de estudo na matéria Geografia'+RESET},0.05)
+    elif jogador.pontosGeo > jogador.pontosMat:
+        textoAnimado({YELLOW+'\n\nRecomendado maior enfase de estudo na matéria Matemática'+RESET},0.05)
 
-        \n\n""")
+    input('\n\n\n\nDigite para sair: ')
+    exit()
 
 def historia():
 

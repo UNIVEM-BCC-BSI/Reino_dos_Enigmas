@@ -70,16 +70,53 @@ if perguntaRoubo5.status == True:
 
 #=====================================================================================================
 
+def Final():
+    print(f"""\n\n
+
+
+    
+
+
+
+
+
+
+                                            {YELLOW+'+---------------------+'+RESET}  
+                                            {YELLOW+'|  Reino dos Enigmas  |'+RESET}
+                                            {YELLOW+'+---------------------+'+RESET} 
+
+
+
+                                            
+
+
+
+                        
+        
+                        
+                        """)
+    {textoAnimado(BLUE+"- OBRIGADO POR TER JOGADO -"+RESET,0.05)}
+
+                        
+
+    {textoAnimado(CYAN+'\n\n\n\n- CRÉDITOS: -\n\n\n'+RESET,0.05)}
+
+    {textoAnimado("Otávio SBMS\n\nHenry Lacava\n\nJuan Yang\n\nGuilherme Silva\n\nYukio Mawatari\n\n\n\n",0.05)}
+
+    input("Digite para prosseguir: ")
+    Resultados()
+
+
+
+
+
+
+
+
+
 def Resultados():
 
-    print(f"""
-            {CYAN+'+---------------------+'+RESET}  
-            {CYAN+'|  Reino dos Enigmas  |'+RESET}
-            {CYAN+'+---------------------+'+RESET} 
-
-           {CYAN+'- RELATORIO DE QUESTÕES -'+RESET}
-
-        \n\n""")
+    textoAnimado(BLUE+"\n\n\n- RELATÓRIO DE QUESTÕES: -\n\n\n\n\n"+RESET,0.05)
 
     perguntaPraia.relatorio()
     perguntaFloresta.relatorio()
@@ -99,11 +136,9 @@ def Resultados():
 
 
 
-    print(f"""\n\n
 
-           {CYAN+'- PONTOS OBTIDOS -'+RESET}
+    textoAnimado({BLUE+'\n\n\n\n- PONTOS OBTIDOS -\n\n\n\n'+RESET},0.05)
 
-        \n\n""")
 
     textoAnimado({CYAN+"Ao longo do jogo foram obtidos:"+RESET},0.01)
     print(f"\n\n {jogador.pontosGeo} {YELLOW+'Pontos na materia Geografia'+RESET}")
@@ -111,10 +146,14 @@ def Resultados():
     print(f"\n\n\n{CYAN+f'O inventario de {jogador.name} possui os itens:'+RESET}")
     jogador.exibeInventario()
 
-    print(f"""\n\n
+    textoAnimado({CYAN+'\n\n\n- CONCLUSÃO -'+RESET},0.05)
 
-           {CYAN+'- CONCLUSÃO -'+RESET}
+    if jogador.pontosGeo < jogador.pontosMat:
+        textoAnimado({YELLOW+'\n\nRecomendado maior enfase de estudo na matéria Geografia'+RESET},0.05)
+    elif jogador.pontosGeo > jogador.pontosMat:
+        textoAnimado({YELLOW+'\n\nRecomendado maior enfase de estudo na matéria Matemática'+RESET},0.05)
 
-        \n\n""")
+    input('\n\n\n\nDigite para sair: ')
+    exit()
 
-Resultados()
+Final()

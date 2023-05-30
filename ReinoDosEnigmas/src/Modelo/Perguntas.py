@@ -32,7 +32,7 @@ class Pergunta:
             {self.enunciado}
 
 {YELLOW+f'sobre {CYAN+self.materia+YELLOW} do assunto {CYAN+self.assunto+YELLOW} está errada!'+RESET}
-{YELLOW+f'Resposta correta: {CYAN+self.resposta+YELLOW}'+RESET}\n""",0.01)
+{YELLOW+f'Resposta correta: {CYAN+self.resposta+YELLOW}'+RESET}\n\n""",0.01)
 
 # MODO DE UTILIZAÇÃO:
 
