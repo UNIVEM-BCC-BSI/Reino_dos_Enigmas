@@ -2,7 +2,7 @@ from src.Config.funcoes import *
 from src.Modelo.Player import *
 
 player = str(input('\nNome: '))
-jogador = Player(player,'Moedas de ouro',10)
+jogador = Player(player,'Moedas de ouro',50)
 
 from src.Modelo.questoes import *
 
@@ -245,10 +245,45 @@ def CasaIsolada():
             print(RED+'\nEscolha uma opção válida.'+RESET)
 
 def Roubo():
-    print("oii")
+    print("teste")
 
 def CidadeDoMar():
-    textoAnimado(f'Após caminhar por uma estrada, aos poucos o {jogador.name} consegue presenciar o mar aparecendo diante dele, e não muito depois uma grandiosa cidade com dezenas de navios atracados em seus portos.Andando na cidade o {jogador.name} nota que nunca esteve em um centro tão grande como aquele, repleto de vendedores de todos os tipos, vários guardas, pessoas andando apressadas pelas ruas e um grandioso Castelo.Buscando informações sobre como você poderia conseguir um novo barco para sair finalmente do continente o {jogador.name} descobre que nesta cidade existe um grandioso artesão que produzia barcos a vários comerciantes e até mesmo para a frota do rei.\n\nopções: conversar com o artesão.',0.01)
+    textoAnimado(f"\nApós caminhar por uma estrada, aos poucos {jogador.name} consegue presenciar o mar aparecendo no horizonte diante dele, e não muito depois uma grandiosa cidade com dezenas de navios atracados em seus portos.\n\nAndando na cidade {jogador.name} nota que nunca esteve em um centro tão grande como aquele, repleto de vendedores de todos os tipos, vários guardas, pessoas andando apressadas pelas ruas e um enorme e imponente Castelo.\n\nBuscando informações sobre como {jogador.name} poderia conseguir um novo barco para sair finalmente do continente, {jogador.name} vai até o porto e percebe que muitos barcos possuiam uma marcação em seus cascos.\n\nPerguntando para um marinheiro {jogador.name} descobre que nesta cidade existe um famoso Artesão responsavel por produzir diversos tipos barcos para vários comerciantes e até mesmo a frota do rei.\n\nCom esta informação {jogador.name} não pensa duas vezes e sai em busca de encontrar o Artesão\n\n\n",0.01)
+
+    textoAnimado(f"Em seu caminho, {jogador.name} observou bem a cidade e andou durante toda aquela manhã sem que nenhuma pista fosse encontrada.\n\nJá quase conformado de que não encontraria o caminho, {jogador.name} para um portuário e faz uma ultima tentativa de perguntar a onde deveria ir.\n\n{GREEN+jogador.name+RESET} - Desculpe-me, senhor, estou à procura de um artesão de barcos renomado nesta cidade.\nSabe onde posso encontrá-lo?\n\n{BLUE+'Portuário'+RESET} - Estou muito ocupado por aqui...\n\n{GREEN+jogador.name+RESET} - Por favor, já estou a manhã toda  procurando!\n\n{BLUE+'Portuário'+RESET} - hmm ta bem, más então me tire uma duvida recente. Voce tem cara de ser bem mais esperto do que eu.\n\n",0.01)
+
+    perguntaCidadeMar.exibirEnunciado()
+
+    while True:
+        textoAnimado('Resposta: ',0.01)
+        escolha = (input())
+        if escolha == '1':
+            resposta = '1'
+            break
+        elif escolha == '2':
+            resposta = '2'
+            break
+        elif escolha == '3':
+            resposta = '3'
+            break
+        else:
+            print(RED+'\nEscolha uma opção válida.'+RESET)
+
+    perguntaCidadeMar.verificarResposta(resposta)
+
+    
+    if perguntaCidadeMar.status == True:
+        textoAnimado(f"\n\n{BLUE+'Portuário'+RESET} - Ora como não reparei nisso antes, muito obrigado jovem! O que tinha me perguntado antes mesmo?...\n\n",0.01)
+    elif perguntaCidadeMar.status == False:
+        textoAnimado(f"\n\n{BLUE+'Portuário'+RESET} - hmm vou procurar um pouco mais sobre... más de qualquer forma obrigado. O que tinha me perguntado antes mesmo?...\n\n",0.01)
+    
+    textoAnimado(f"{BLUE+'Portuário'+RESET} - Ah sim me lembro, você deve estar falando de Lars, o mestre construtor de barcos.\nEle é um homem notável, e seu estaleiro fica do outro lado do porto, próximo à colina da baía.\nSiga a rua principal até a praça central, e você o encontrará.\n\n{jogador.name} ficou impressionado como a informação estava na ponta de seu nariz o tempo todo, e agradeceu ao portuário com um aceno de cabeça partindo em busca de Lars.",0.01)
+
+    input('\n\nDigite para continuar: ')
+    Barco()
+
+def Barco():
+    print("teste")
 
 def Resultados():
 

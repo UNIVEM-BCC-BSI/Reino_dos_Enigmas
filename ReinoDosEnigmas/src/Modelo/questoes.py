@@ -13,7 +13,7 @@ perguntaFazenda = Pergunta('Qual é a fórmula utilizada para calcular a área d
 # 5
 perguntaRio = Pergunta('Qual é o nome da área formada pela deposição de sedimentos no final de um rio, onde ele se encontra com o oceano?\n\n1- Delta\n\n2- Estuário\n\n3- Península','Delta','1','Geografia','Hidrografia')
 # 6
-perguntaCidadeMar = Pergunta('A matriz energética brasileira tem grande participação de fontes renováveis de energia quando comparada as dos demais países industrializados. Qual a fonte renovável de energia possui a maior participação na matriz energética brasileira\n\n1- Hidráulica\n\n2- Eólica\n\n3- Biomassa','Biomassa','3','Geografia','Matriz energética')
+perguntaCidadeMar = Pergunta(f"Qual dos seguintes organismos é responsável pela construção de grandes estruturas rochosas encontradas nos oceanos e conhecidas como 'jardins subaquáticos?'\n\n1- Algas marinhas\n\n2- Medusas\n\n3- Corais\n\n",'Corais','3','Geografia','Biologia Marinha')
 # 7
 perguntaBarco = Pergunta('Um barco percorre uma distância de 75 quilômetros em 2,5 horas. Qual é a velocidade média do barco em quilômetros por hora?\n\n 1- 30Km/h\n\n2- 25Km/h\n\n3- 35Km/h','30Km/h','1','Matemática','Velocidade média')
 
