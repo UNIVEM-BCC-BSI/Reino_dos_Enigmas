@@ -9,7 +9,7 @@ class Pergunta:
         self.assunto = assunto
 
     def exibirEnunciado(self):
-        textoAnimado(f'\n{self.enunciado}',0.01)
+        textoAnimado(f'\n{YELLOW+self.enunciado+RESET}',0.01)
 
 
     def verificarResposta(self, resposta):
@@ -21,7 +21,7 @@ class Pergunta:
 
     def relatorio(self):
         if self.status == True:
-            textoAnimado(f"""{YELLOW+'- A resposta que foi dada para a pergunta:'+RESET}
+            textoAnimado(f"""\n\n{YELLOW+'- A resposta que foi dada para a pergunta:'+RESET}
 
             {self.enunciado}
 

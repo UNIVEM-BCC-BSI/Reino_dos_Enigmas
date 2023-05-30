@@ -2,7 +2,7 @@ from src.Config.funcoes import *
 from src.Modelo.Player import *
 
 player = str(input('\nNome: '))
-jogador = Player(player,'Moedas de ouro',5)
+jogador = Player(player,'Moedas de ouro',10)
 
 from src.Modelo.questoes import *
 
@@ -26,13 +26,55 @@ def intro():
 def Praia():
     textoAnimado(f'\n\nSeguindo pela areia da praia é possível enxergar os destroços do que um dia foi o seu barco, indo mais à frente {jogador.name} se depara com uma vegetação mais densa e uma aparente trilha para a floresta que entes foi ignorada, ao mesmo tempo é possível ver ao horizonte altos muros de uma grande cidade.\n\nAo observar por mais algum tempo o oceno, {jogador.name} observa que a água parecia estar um pouco mais rasa do que ela se encontrava agora, más ignora o acontecimento.\n',0.01)
     perguntaPraia.exibirEnunciado()
-    resposta = input('\n\nResposta: ')
+
+    while True:
+        textoAnimado('\n\nResposta: ',0.01)
+        escolha = (input())
+        if escolha == '1':
+            resposta = '1'
+            break
+        elif escolha == '2':
+            resposta = '2'
+            break
+        elif escolha == '3':
+            resposta = '3'
+            break
+        else:
+            print(RED+'\nEscolha uma opção válida.'+RESET)
+
     perguntaPraia.verificarResposta(resposta)
+    if perguntaPraia.status == True:
+        jogador.darPontos("Geografia")
+
     input('\nDigite para continuar: ')
     Floresta()
 
 def Floresta():
-    textoAnimado(f'\nEntrando na floresta, {jogador.name} vai andando devagar e com muito cuidado até se deparar com um enorme Javali selvagem em meio a vegetação. No intuito de tentar escapar sem quel o animal o perceba, {jogador.name} tenta sair dali o mais rápido possivel, porem já era tarde demais e o Javali começa o perseguir. {jogador.name} corre com todo o seu folego até encontrar uma encrusilhada em meio a densa floresta, onde havia uma caverna e lado contrário uma trilha abandonada.',0.01)
+    textoAnimado(f"\nEntrando na floresta, {jogador.name} vai andando devagar e com muito cuidado, olhando todas aquelas arvores e vegetação, {jogador.name} fica impressioonado com o tamanho da floresta",0.01)
+
+    perguntaFloresta.exibirEnunciado()
+
+    while True:
+        textoAnimado('\n\nResposta: ',0.01)
+        escolha = (input())
+        if escolha == '1':
+            resposta = '1'
+            break
+        elif escolha == '2':
+            resposta = '2'
+            break
+        elif escolha == '3':
+            resposta = '3'
+            break
+        else:
+            print(RED+'\nEscolha uma opção válida.'+RESET)
+
+    perguntaFloresta.verificarResposta(resposta)
+    if perguntaFloresta.status == True:
+        jogador.darPontos("Geografia")
+
+
+    textoAnimado(f"{jogador.name} Continua andando até se deparar com um enorme Javali selvagem em meio a vegetação. No intuito de tentar escapar sem quel o animal o perceba, {jogador.name} tenta sair dali o mais rápido possivel, porem já era tarde demais e o Javali começa o perseguir. {jogador.name} corre com todo o seu folego até encontrar uma encrusilhada em meio a densa floresta, onde havia uma caverna e lado contrário uma trilha abandonada.",0.01)
     while True:
         textoAnimado('\nQual será sua escolha?\n\n1 - Seguir correndo pela floresta \n2 - Entrar na caverna\n\nEscolha: ',0.01)
         escolhaParte2 = (input())
@@ -69,6 +111,7 @@ def caverna():
     perguntaCaverna.verificarResposta(resposta)
     
     if perguntaCaverna.status == True:
+        jogador.darPontos("Geografia")
         textoAnimado(f"\n{BLUE+'Minerador'+RESET} - Hmm, me parece que voce não é tão tolo quanto eu imaginava, a resposta está correta, pegue tambem este premio:\n",0.01)
         jogador.adicionaItem('Moedas de ouro',50)
         textoAnimado('\nmoedas de ouro adicionadas na mochila',0.01)
@@ -114,6 +157,7 @@ def Fazenda():
 
 
     if perguntaFazenda.status == True:
+        jogador.darPontos("Matematica")
         textoAnimado(f"\n{BLUE+'Fazendeiro'+RESET} - Nossa!, nunca tinha parado para pensar assim.\npegue estas moedas como forma de pagamento. A sua ajuda foi maior do que eu imaginava.",0.01)
         jogador.adicionaItem('Moedas de ouro',80)
         textoAnimado('\n\nmoedas de ouro adicionadas na mochila',0.01)
@@ -128,16 +172,130 @@ def Fazenda():
     Rio()
 
 def Rio():
-    textoAnimado(f"\n\nSaindo da fazenda e seguindo uma estrada por algumas horas, o {jogador.name} encontra um grandioso rio continuando com muito cuidado pela margem do rio, em pouco tempo o {jogador.name} conseguiu encontrar pequenos canais de irrigação que saiam do rio, logo poderia existir uma civilização pelas redondezas.\nSeguindo mais a fundo, ao longo do canal, um padrão improvável acaba também chamando a atenção do {jogador.name}.\nUm pequeno desvio nos canais feitos de pedra levava a uma tubulação improvisada feita de bamboo em direção ao campo.",0.01)
+    textoAnimado(f"\n\nSaindo da fazenda e seguindo uma estrada por algumas horas, {jogador.name} encontra um rio.\n\n{jogador.name} também notou que o rio contornava os locais por onde já havia passado e agora ele estava chegando em seu fim, indo em direção ao oceano.\n",0.01)
+    
+    perguntaRio.exibirEnunciado()
+
+    while True:
+        textoAnimado('\n\nResposta: ',0.01)
+        escolha = (input())
+        if escolha == '1':
+            resposta = '1'
+            break
+        elif escolha == '2':
+            resposta = '2'
+            break
+        elif escolha == '3':
+            resposta = '3'
+            break
+        else:
+            print(RED+'\nEscolha uma opção válida.'+RESET)
+
+    perguntaRio.verificarResposta(resposta)
+
+    if perguntaRio.status == True:
+        jogador.darPontos("Geografia")
+
+    textoAnimado(f"\nContinuando com cuidado pela margem, em pouco tempo {jogador.name} conseguiu encontrar canais de irrigação que saíam do rio, logo poderia existir uma civilização pelas redondezas.\n\nSeguindo mais a fundo, ao longo do canal, um padrão improvável acaba também chamando a atenção de {jogador.name}.\n\nUm desvio nos canais feitos de pedra levava a uma tubulação improvisada feita de bambu em direção ao campo.\n",0.01)
+
+
+    while True:
+        textoAnimado('\nQual será sua escolha?\n\n1 - Seguir os canais de pedra\n2 - Seguir a tubulação de Bamboo\n\nEscolha: ',0.01)
+        escolhaParte2 = (input())
+        if escolhaParte2 == '1':
+            CidadePequena()
+            break
+        elif escolhaParte2 == '2':
+            CasaIsolada()
+            break
+        else:
+            print(RED+'\nEscolha uma opção válida.'+RESET)
 
 def CidadePequena():
-    textoAnimado(f"\n\nSeguindo os grandes canais de irrigação, no horizonte o {jogador.name} já consegue enxergar uma nova cidade em seu caminho.\nEsta nova cidade ao contrário da primeira cidade visitada pelo {jogador.name}. era pequena e com poucos habitantes.\nNo centro dela também havia um pequeno centro comercial, onde chamou a atenção do {jogador.name} a grande quantidade de frutos do mar e peixes que eram vendidos.\nPensando nisso, o {jogador.name} pergunta o motivo a um habitante local e acaba descobrindo que ele estaria a poucas horas do litoral e de uma das maiores cidades do reino.\n\n opções: ir até o vendedor ou continuar o caminho.após observar tudo o que pretendia, o {jogador.name} continua a sua jornada agora mais confiante de ter o seu objetivo concluído.", 0.01)
+    textoAnimado(f"\n\nSeguindo os canais de irrigação, no horizonte {jogador.name} já consegue enxergar uma nova cidade em seu caminho.\nEsta nova cidade ao contrário da primeira cidade visitada pelo {jogador.name}. era pequena e com poucos habitantes.\nNo centro dela também havia uma Feira, onde chamou a atenção de {jogador.name} a grande quantidade de frutos do mar e peixes que eram vendidos.\nPensando nisso, {jogador.name} pergunta a um habitante local o quão perto ele já se sencontrava do Oceano. e acaba descobrindo que ele estaria a poucas horas do litoral e de uma das maiores cidades do reino.\n\n Com isso, {jogador.name} continua a sua jornada agora mais confiante de ter o seu objetivo concluído.", 0.01)
+    input('\nDigite para continuar: ')
+    CidadeDoMar()
 
 def CasaIsolada():
-    textoAnimado(f"Seguindo a tubulação improvisada o {jogador.name} anda por alguns minutos até encontrar uma pequena cabana feita de madeira isolada em meio a um campo.\nBatendo na porta da cabana um velho sai de dentro dela.\nApós conversar com o velho, o {jogador.name} acaba ganhando a confiança do morador isolado, e em determinado momento uma proposta é feita.\n\nOpções: confiar ou não confiar.")
+    textoAnimado(f"\nSeguindo a tubulação improvisada, {jogador.name} anda por alguns minutos até encontrar uma pequena cabana feita de madeira isolada em meio a um campo.\nCurioso, {jogador.name} decide se aproximar e bater na porta. Para sua surpresa, um velho vestindo trapos e com uma barba longa abriu a porta.\n\n{BLUE+'Velho'+RESET}- Quem é?\n\n{GREEN+jogador.name+RESET}- Oi.. achei que a casa estava vazia..\n\n{BLUE+'Velho'+RESET}- Sim, mas não está, tenha um bom dia.\n\n{GREEN+jogador.name+RESET}- Espere, preciso de ajuda.\n\n{BLUE+'Velho'+RESET}- hmm que tipo de ajuda?\n\n{GREEN+jogador.name+RESET}- sou um viajante e preciso de um lugar para dormir, o senhor sabe onde posso arrumar um abrigo?\n\n{BLUE+'Velho'+RESET}- hmm por aqui não tem nada além de um pequeno povoado mais ao norte, mas a estrada estas horas costuma ser bem perigosa.\n\n{GREEN+jogador.name+RESET}- Então eu poderia passar só esta noite aqui?\n\nO velho analisa {jogador.name} dos pés a cabeça. Algo entre os dois parecia familiar, então pela surpresa dele mesmo, o pedido de {jogador.name} foi aceito.\n\n{BLUE+'Velho'+RESET}- aahh tabom, mas só por hoje...\n\n{jogador.name} ao entrar consegue ver uma cabana muito humilde, com utencilios de navegação, um chapéu e um papagaio em uma gaiola com apenas um olho aberto.\n\n{jogador.name} também nota que o estranho velho andava mancando pois possuia uma perna de pau.\nDepois destas descobertas {jogador.name} disse:\n\n{GREEN+jogador.name+RESET}- Ei, o senhor navegava?\n\n{BLUE+'Velho'+RESET}- Eu ja fui um aventureiro, acho q pode-se dizer assim...\n\n{GREEN+jogador.name+RESET}- hmm que tipo de aventureiro marujo?\n\n{BLUE+'Velho'+RESET}- Marujo?? como ousa me chamar assim, eu mandava neste mar!\n\n{GREEN+jogador.name+RESET}- Eu sabia que algo estav diferente, desculpe senhor mas qual é o seu nome?\n\n{BLUE+'Velho'+RESET}- Eu já tive varios nomes, mas o mais conhecido deles foi JACK\n\n{jogador.name} fica assustado com aquela informação.\n\n{GREEN+jogador.name+RESET}- JACK? O lendario pirata? aquele que sempre caçava enorme fortunas e ficava conhecido entre todos os sete mares?\n\n{BLUE+'Velho (Jack)'+RESET}- Sim jovem, mas a idade chega para todos...\n\n{GREEN+jogador.name+RESET}- E o que aconteceu com toda a sua fortuna?\n\n{BLUE+'Velho (Jack)'+RESET}- Por volta dos meus 30 anos em minha ultima jornada, finalmente a guarda real conseguiu me encurralar em um estreito canal, perdi tudo o que eu tinha, e a minha tripulação sumiu como poeira no vento.\n\nagora tudo o que me resta são memorias e meu papagaio nesta cabana, mas consigo viver bem, estou muito cansado.\n\n{BLUE+'Velho (Jack)'+RESET}- Escuta 'Viajante', como sabia tudo isso de mim?\n\n{GREEN+jogador.name+RESET}- errr.. quem eu quero enganar.\nCostumava também ser um pirata como o senhor, mas apenas havia eu e meu barco.\nNa minha ultima jornada estava procurando um suposto tesouro em uma pequena ilha proxima ao continente.\nAté uma terrivel tempestade me arrastar para a costa e eu bater o meu barco em um recife de corais.\n\n{BLUE+'Velho (Jack)'+RESET}- Olha só... quem diria..\nAgora deixe eu ver se eu adivinho, voce está andando até a grande cidade do porto para roubar um novo barco certo?\n\n{GREEN+jogador.name+RESET}- Roubar?? hmm não estava nos planos, estou juntando dinheiro no caminho.\n\n{BLUE+'Velho (Jack)'+RESET}- *Solta uma Gargalhada* Que tipo de pirata é esse, eu já me cansei de estar em situações semelhantes a sua, e nunca nem ao menos cogitei juntar moedinhas...\n\n{GREEN+jogador.name+RESET}- hmm e como eu conseguiria roubar um BARCO? a cidade é a mais povoada do reino, existem muitos guardas.\nIsso me parece um plano muito mirabolante, tenho bastante dinheiro acumulado e acredito que conseguiria comprar um barco novo. Sou apenas um caçador de tesouros e não um saqueador.\n\n{BLUE+'Velho (Jack)'+RESET}- Bem meu jovem..., então que assim seja. Mas caso mude de ideia eu já planejei um plano a muito tempo atras quendo eu ainda tinha esperaça...\n\nJack puxa uma rede para {jogador.name} conseguir se deita para dormir...\n\n{BLUE+'Velho (Jack)'+RESET}- Esta quase na minha hora de dormir, então até mais cedo, caso a nossa conversa tenha sido suficiente...",0.01)
+
+
+    while True:
+        textoAnimado('\n\nQual será sua escolha?\n\n1- Perguntar o plano de Jack (Roubar)\n2- Ir dormir\n\nEscolha: ',0.01)
+        escolha = (input())
+        if escolha == '1':
+            textoAnimado(f"\n\n{GREEN+jogador.name+RESET}- Espere!...me diga mais sobre este seu plano.\n\nJack abre um sorriso no canto de sua boca..\n\n{BLUE+'Velho (Jack)'+RESET}- Achei que não iria perguntar.\no plano foi feito a muitos anos, mas acredito aque ainda sirva até os dias atuais. Requer muito cuidado e cautela. \n\n{BLUE+'Velho (Jack)'+RESET}- Primeiro voce terá que ir até o porto e observar a rotina de quem trabalha por lá, desse jeito voce irá descobrir os momentos de menor vigilância.\nDepois disso voce terá que encontrar qual será o barco escolhido, e o restante é sorte meu amigo, más tenho algumas anotações aqui comigo sobre mais alguns passos para voce seguir.",0.01)
+
+            jogador.adicionaItem("Anotações de Jack")
+            textoAnimado('\n\nAnotações de Jack adicionadas na mochila',0.01)
+            jogador.exibeInventario()
+
+            textoAnimado(f"\n\n{GREEN+jogador.name+RESET}- Entendi, amanhã eu tatarei seguir este plano, obrigado pela dica.\njack vai para o seu quarto e {jogador.name} passa a noite em sua rede improvisada na sala da cabana.\n\nno dia seguinte {jogador.name} acorda bem cedo e a cabana estava vazia.\nComo forma de agradecimento {jogador.name} limpa todo o local e escreve em um pedaço de papel sua gratidão de ter passado uma noite com uma lenda viva, e segue a sua viagem.\ndurante o caminho foi possivel ver Jack bem longe ao rio pescando o seu almoço, mas {jogador.name} estava com pressa e se concentra denovo no seu caminho.\n\n",0.01)
+            input('\nDigite para continuar: ')
+
+            Roubo()
+            break
+        elif escolha == '2':
+            textoAnimado(F"\n\n{GREEN+jogador.name+RESET}- O senhor já me ajudou muito, obrigado por tudo! amanhã sairei bem cedo.\n\njack vai para o seu quarto e {jogador.name} passa a noite em sua rede improvisada na sala da cabana.\nno dia seguinte {jogador.name} acorda bem cedo e a cabana estava vazia. Como forma de agradecimento {jogador.name} limpa todo o local e escreve em um pedaço de papel sua gratidão de ter passado uma noite com uma lenda viva, e segue a sua viagem.\n\nDurante o caminho foi possivel ver Jack bem longe ao rio pescando o seu almoço, mas {jogador.name} estava com pressa e se concentra denovo no seu caminho.\n\n",0.01)
+            input('\nDigite para continuar: ')
+
+            CidadeDoMar()
+            break
+        else:
+            print(RED+'\nEscolha uma opção válida.'+RESET)
+
+def Roubo():
+    print("oii")
 
 def CidadeDoMar():
     textoAnimado(f'Após caminhar por uma estrada, aos poucos o {jogador.name} consegue presenciar o mar aparecendo diante dele, e não muito depois uma grandiosa cidade com dezenas de navios atracados em seus portos.Andando na cidade o {jogador.name} nota que nunca esteve em um centro tão grande como aquele, repleto de vendedores de todos os tipos, vários guardas, pessoas andando apressadas pelas ruas e um grandioso Castelo.Buscando informações sobre como você poderia conseguir um novo barco para sair finalmente do continente o {jogador.name} descobre que nesta cidade existe um grandioso artesão que produzia barcos a vários comerciantes e até mesmo para a frota do rei.\n\nopções: conversar com o artesão.',0.01)
+
+def Resultados():
+
+    print(f"""
+            {CYAN+'+---------------------+'+RESET}  
+            {CYAN+'|  Reino dos Enigmas  |'+RESET}
+            {CYAN+'+---------------------+'+RESET} 
+
+           {CYAN+'- RELATORIO DE QUESTÕES -'+RESET}
+
+        \n\n""")
+
+    perguntaPraia.relatorio()
+    perguntaFloresta.relatorio()
+    perguntaCaverna.relatorio()
+    perguntaFazenda.relatorio()
+    perguntaRio.relatorio()
+    perguntaCidadeMar.relatorio()
+    perguntaBarco.relatorio()
+
+    textoAnimado(f"\n\n{CYAN+f'- QUESTÕES DO ROUBO -'+RESET}",0.01)
+
+    perguntaRoubo1.relatorio()
+    perguntaRoubo2.relatorio()
+    perguntaRoubo3.relatorio()
+    perguntaRoubo4.relatorio()
+    perguntaRoubo5.relatorio()
+
+
+
+    print(f"""\n\n
+
+           {CYAN+'- PONTOS OBTIDOS -'+RESET}
+
+        \n\n""")
+
+    textoAnimado({CYAN+"Ao longo do jogo foram obtidos:"+RESET},0.01)
+    print(f"\n\n {jogador.pontosGeo} {YELLOW+'Pontos na materia Geografia'+RESET}")
+    print(f"\n\n {jogador.pontosMat} {YELLOW+'Pontos na materia Matematica'+RESET}")
+    print(f"\n\n\n{CYAN+f'O inventario de {jogador.name} possui os itens:'+RESET}")
+    jogador.exibeInventario()
+
+    print(f"""\n\n
+
+           {CYAN+'- CONCLUSÃO -'+RESET}
+
+        \n\n""")
 
 def historia():
 
@@ -154,7 +312,3 @@ def historia():
             break
         else:
             print(RED+'\nEscolha uma opção válida.'+RESET)
-
-def Roubo():
-    
-def Relatorio():

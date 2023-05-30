@@ -4,7 +4,51 @@ from src.Config.funcoes import *
 from src.Modelo.questoes import *
 from src.historia import *
 
-def Rio():
-    textoAnimado(f"\n\nSaindo da fazenda e seguindo uma estrada por algumas horas, o {jogador.name} encontra um grandioso rio continuando com muito cuidado pela margem do rio, em pouco tempo o {jogador.name} conseguiu encontrar pequenos canais de irrigação que saiam do rio, logo poderia existir uma civilização pelas redondezas.\nSeguindo mais a fundo, ao longo do canal, um padrão improvável acaba também chamando a atenção do {jogador.name}.\nUm pequeno desvio nos canais feitos de pedra levava a uma tubulação improvisada feita de bamboo em direção ao campo.",0.01)
+def Resultados():
 
-Rio()
+    print(f"""
+            {CYAN+'+---------------------+'+RESET}  
+            {CYAN+'|  Reino dos Enigmas  |'+RESET}
+            {CYAN+'+---------------------+'+RESET} 
+
+           {CYAN+'- RELATORIO DE QUESTÕES -'+RESET}
+
+        \n\n""")
+
+    perguntaPraia.relatorio()
+    perguntaFloresta.relatorio()
+    perguntaCaverna.relatorio()
+    perguntaFazenda.relatorio()
+    perguntaRio.relatorio()
+    perguntaCidadeMar.relatorio()
+    perguntaBarco.relatorio()
+
+    textoAnimado(f"\n\n{CYAN+f'- QUESTÕES DO ROUBO -'+RESET}",0.01)
+
+    perguntaRoubo1.relatorio()
+    perguntaRoubo2.relatorio()
+    perguntaRoubo3.relatorio()
+    perguntaRoubo4.relatorio()
+    perguntaRoubo5.relatorio()
+
+
+
+    print(f"""\n\n
+
+           {CYAN+'- PONTOS OBTIDOS -'+RESET}
+
+        \n\n""")
+
+    textoAnimado({CYAN+"Ao longo do jogo foram obtidos:"+RESET},0.01)
+    print(f"\n\n {jogador.pontosGeo} {YELLOW+'Pontos na materia Geografia'+RESET}")
+    print(f"\n\n {jogador.pontosMat} {YELLOW+'Pontos na materia Matematica'+RESET}")
+    print(f"\n\n\n{CYAN+f'O inventario de {jogador.name} possui os itens:'+RESET}")
+    jogador.exibeInventario()
+
+    print(f"""\n\n
+
+           {CYAN+'- CONCLUSÃO -'+RESET}
+
+        \n\n""")
+
+Resultados()

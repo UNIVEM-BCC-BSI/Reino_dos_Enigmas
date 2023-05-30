@@ -24,7 +24,7 @@ class Player:
         print(CYAN+f"{self.inventario}"+RESET)
 
     def darPontos(self, materia):
-        if materia == 'geografia':
+        if materia == 'Geografia':
             self.pontosGeo += 1
-        elif materia == 'matematica':
+        elif materia == 'Matematica':
             self.pontosMat += 1
