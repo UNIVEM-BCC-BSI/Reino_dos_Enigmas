@@ -7,7 +7,8 @@ class Pergunta:
         self.alternativa = alternativa
         self.materia = materia
         self.assunto = assunto
-
+        self.status = False
+    
     def exibirEnunciado(self):
         textoAnimado(f'\n{YELLOW+self.enunciado+RESET}',0.01)
 
@@ -17,7 +18,6 @@ class Pergunta:
             self.status = True
         else:
             self.status = False
-
 
     def relatorio(self):
         if self.status == True:
