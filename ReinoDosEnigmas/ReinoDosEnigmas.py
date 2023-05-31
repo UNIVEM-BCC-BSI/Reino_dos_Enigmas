@@ -33,7 +33,7 @@ while True:
             Guilherme Silva
             Yukio Mawatari""")
 
-        textoAnimado('\nDigite qualquer numero para voltar: ', 0.08)
+        textoAnimado('\nDigite Enter para voltar: ', 0.08)
         (input())
             
     elif escolhaInicio == '4':
