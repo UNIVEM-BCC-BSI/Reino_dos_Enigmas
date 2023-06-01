@@ -734,6 +734,8 @@ def Resultados():
         textoAnimado({YELLOW+'\n\nRecomendado maior enfase de estudo na matéria Geografia'+RESET},0.05)
     elif g > m:
         textoAnimado({YELLOW+'\n\nRecomendado maior enfase de estudo na matéria Matemática'+RESET},0.05)
+    else:
+        textoAnimado({YELLOW+'\n\nRecomendado maior estudo nas matérias Geografia e Matemática'+RESET},0.05)
 
     input('\n\n\n\nDigite Enter para sair: ')
     exit()

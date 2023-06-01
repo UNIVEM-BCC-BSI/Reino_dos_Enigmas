@@ -387,6 +387,9 @@ def Roubo():
 
         perguntaRoubo1.verificarResposta(resposta)
 
+        if perguntaRoubo1.status == True:
+            jogador.darPontos("Geografia")
+
         # Pergunta 2
 
         perguntaRoubo2.exibirEnunciado()
@@ -407,6 +410,9 @@ def Roubo():
                 print(RED+'\nEscolha uma opção válida.'+RESET)
 
         perguntaRoubo2.verificarResposta(resposta)
+
+        if perguntaRoubo2.status == True:
+            jogador.darPontos("Geografia")
 
         # Pergunta 3
 
@@ -429,6 +435,9 @@ def Roubo():
 
         perguntaRoubo3.verificarResposta(resposta)
 
+        if perguntaRoubo3.status == True:
+            jogador.darPontos("Geografia")
+
         # Pergunta 4
 
         perguntaRoubo4.exibirEnunciado()
@@ -450,6 +459,9 @@ def Roubo():
 
         perguntaRoubo4.verificarResposta(resposta)
 
+        if perguntaRoubo2.status == True:
+            jogador.darPontos("Matematica")
+
         # Pergunta 5
 
         perguntaRoubo5.exibirEnunciado()
@@ -470,6 +482,9 @@ def Roubo():
                 print(RED+'\nEscolha uma opção válida.'+RESET)
 
         perguntaRoubo5.verificarResposta(resposta)
+
+        if perguntaRoubo2.status == True:
+            jogador.darPontos("Matematica")
 
         p1 = perguntaRoubo1.status
         p2 = perguntaRoubo2.status
@@ -734,6 +749,8 @@ def Resultados():
         textoAnimado({YELLOW+'\n\nRecomendado maior enfase de estudo na matéria Geografia'+RESET},0.05)
     elif g > m:
         textoAnimado({YELLOW+'\n\nRecomendado maior enfase de estudo na matéria Matemática'+RESET},0.05)
+    else:
+        textoAnimado({YELLOW+'\n\nRecomendado maior estudo nas matérias Geografia e Matemática'+RESET},0.05)
 
     input('\n\n\n\nDigite Enter para sair: ')
     exit()
