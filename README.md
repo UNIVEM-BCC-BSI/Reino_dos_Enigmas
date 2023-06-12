@@ -4,4 +4,6 @@ O jogador vivencia um pirata que naufraga em um novo continente e se vê na nece
 
 No fim do jogo, todos os itens ou dinheiro obtidos pelo jogador serão revertidos em pontos, e será possível visualizar um relatório das suas respostas ao longo da jornada, exibindo quais foram as dificuldades das perguntas durante o jogo.
 
-https://www.youtube.com/watch?v=5TieMOiiViU&ab_channel=McKevinOficial
+# Apresentação do projeto
+
+https://www.youtube.com/watch?v=5TieMOiiViU&ab_channel=HenryLacava
